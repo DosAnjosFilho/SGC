@@ -15,7 +15,9 @@ class SGC(nn.Module):
         self.W = nn.Linear(nfeat, nclass)
 
     def forward(self, x):
-        return self.W(x)
+        y_pred = F.sigmoid(self.W(x))
+        return y_pred
+        # return self.W(x)
 
 class GraphConvolution(Module):
     """
